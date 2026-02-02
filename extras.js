@@ -1,0 +1,264 @@
+
+// ========= Menú (TODO ACÁ ADENTRO) =========
+const MENU_ITEMS = [
+  // =======================
+  // COMBOS
+  // =======================
+  {
+    id: "com-01",
+    name: "Box Mini Burgers",
+    category: "Combos",
+    desc:
+      "4 mini burgers (2 cheese, 1 cheese bacon, 1 tasty). Incluye papas fritas y gaseosa 250 ml. (Las hamburguesas no pueden modificarse.)",
+    price: 60000,
+    img: "Img/Menu/combominis.png",
+    tag: "Más vendido"
+  },
+
+  // =======================
+  // ESPECIALES
+  // =======================
+  {
+    id: "esp-01",
+    name: "4x4 Animal Style",
+    category: "Combos",
+    desc:
+      "Hamburguesa 4x4 con 4 carnes. Cocinadas con mostaza a la plancha, lechuga, cebolla, tomate, queso cheddar americano y pan brioche. (Combo Papas y Coca Cola 250ml)",
+    price: 65000,
+    img: "Img/Menu/4x4 Animal Style.png"
+  },
+  {
+    id: "esp-02",
+    name: "Texas",
+    category: "Combos",
+    desc:
+      "Doble carne, cheddar, aros de cebolla, bacon, huevo frito y mucha salsa barbacoa. (Combo Papas y Coca Cola 250ml)",
+    price: 55000,
+    img: "Img/Menu/texas.jpg",
+    tag: "Más vendido"
+  },
+  {
+    id: "esp-03",
+    name: "Cheese Bacon",
+    category: "Especiales",
+    desc:
+      "Doble carne smash, doble queso cheddar, queso crema, ketchup, mostaza y mucha panceta. (Combo Papas y Coca Cola 250ml)",
+    price: 50000,
+    img: "Img/Menu/cheese.jpg"
+  },
+  {
+    id: "esp-06",
+    name: "Smoke Shack",
+    category: "Especiales",
+    desc:
+      "Doble carne de 90gr c/u, queso cheddar, morrones asados, salsa tabasco, bacon ahumado y salsa mil islas. (No incluye papas y bebidas.)",
+    price: 45000,
+    img: "Img/Menu/smoke-shack.jpg",
+    tag: "Más vendido"
+  },
+  {
+    id: "esp-07",
+    name: "Triple Cheese Bacon",
+    category: "Especiales",
+    desc:
+      "Triple carne de 90gr c/u, 5 fetas de queso cheddar, pepinillos, bacon ahumado y salsa mil islas.",
+    price: 52000,
+    img: "Img/Menu/triple-cheese-bacon.jpg",
+    tag: "Más vendido"
+  },
+  {
+    id: "esp-08",
+    name: "In N Out Animal Style",
+    category: "Especiales",
+    desc:
+      "Doble carne de 90gr c/u a la mostaza, queso cheddar, lechuga hidropónica, tomate, cebolla y salsa mil islas. (No incluye papas y bebidas.)",
+    price: 45000,
+    img: "Img/Menu/in-n-out-animal-style.jpg",
+    tag: "Más vendido"
+  },
+  {
+    id: "esp-09",
+    name: "Tasty Doble",
+    category: "Especiales",
+    desc:
+      "Doble carne de 90gr c/u, cebolla, lechuga hidropónica, tomate, queso cheddar y salsa secreta tasty. (No incluye papas y bebidas.)",
+    price: 42300,
+    img: "Img/Menu/tasty-doble.jpg",
+    tag: "10% OFF"
+  },
+  {
+    id: "esp-10",
+    name: "Chicago",
+    category: "Especiales",
+    desc:
+      "Doble carne de 90gr c/u, queso cheddar, bacon a la miel, cebolla picada, huevo c/ pimienta, ciboulette y salsa secreta tasty. (No incluye papas y bebidas.)",
+    price: 50000,
+    img: "Img/Menu/chicago.jpg",
+    tag: "Más vendido"
+  },
+
+  // =======================
+  // CLÁSICAS
+  // =======================
+  
+  {
+    id: "cla-01",
+    name: "Cheese Regular",
+    category: "Clásicas",
+    desc: "90 gr carne, doble queso cheddar, salsa mil islas. No incluye papas y bebidas.",
+    price: 39000,
+    img: "Img/Menu/cheese-regular.jpg"
+  },
+  {
+    id: "cla-02",
+    name: "Cheese Doble",
+    category: "Clásicas",
+    desc: "Doble carne de 90gr c/u, doble queso cheddar, salsa mil islas. No incluye papas y bebidas.",
+    price: 39000,
+    img: "Img/Menu/cheese-doble.jpg"
+  },
+  {
+    id: "cla-03",
+    name: "Americana Regular",
+    category: "Clásicas",
+    desc: "90 gr carne, queso cheddar, lechuga, tomate, salsa mil islas. No incluye papas y bebidas.",
+    price: 39000,
+    img: "Img/Menu/americana-regular.jpg"
+  },
+  {
+    id: "cla-04",
+    name: "Americana Doble",
+    category: "Clásicas",
+    desc: "Doble carne de 90gr c/u, queso cheddar, lechuga, tomate, salsa mil islas. No incluye papas y bebidas.",
+    price: 45000,
+    img: "Img/Menu/americana-doble.jpg"
+  },
+  {
+    id: "cla-05",
+    name: "Oklahoma Regular",
+    category: "Clásicas",
+    desc: "90 gr carne, queso cheddar, cebolla, salsa mil islas. No incluye papas y bebidas.",
+    price: 34000,
+    img: "Img/Menu/oklahoma-regular.jpg"
+  },
+  {
+    id: "cla-06",
+    name: "Oklahoma Doble",
+    category: "Clásicas",
+    desc: "Doble carne de 90gr c/u, queso cheddar, cebolla, salsa mil islas. No incluye papas y bebidas.",
+    price: 39000,
+    img: "Img/Menu/oklahoma-doble.jpg"
+  },
+  {
+    id: "cla-07",
+    name: "Crispy Regular",
+    category: "Clásicas",
+    desc: "90 gr carne, queso cheddar, cebolla crispy, bacon ahumado, salsa mil islas. No incluye papas y bebidas.",
+    price: 39000,
+    img: "Img/Menu/crispy-regular.jpg"
+  },
+  {
+    id: "cla-08",
+    name: "Crispy Doble",
+    category: "Clásicas",
+    desc: "Doble carne de 90gr c/u, queso cheddar, cebolla crispy, bacon ahumado, salsa mil islas. No incluye papas y bebidas.",
+    price: 45000,
+    img: "Img/Menu/crispy-doble.jpg"
+  },
+
+  // =======================
+  // ACOMPAÑAMIENTOS (genérico)
+  // =======================
+  {
+    id: "aco-01",
+    name: "Papas Fritas (Clásicas)",
+    category: "Acompañamientos",
+    desc: "Porción de papas fritas crocantes.",
+    price: 15000,
+    img: "Img/Menu/papas-clasicas.jpg"
+  },
+  {
+    id: "aco-02",
+    name: "Papas con Cheddar",
+    category: "Acompañamientos",
+    desc: "Papas fritas con salsa cheddar.",
+    price: 20000,
+    img: "Img/Menu/papas-cheddar.jpg"
+  },
+  {
+    id: "aco-03",
+    name: "Papas con Cheddar y Bacon",
+    category: "Acompañamientos",
+    desc: "Papas con cheddar y bacon ahumado.",
+    price: 25000,
+    img: "Img/Menu/papas-cheddar-bacon.jpg"
+  },
+  {
+    id: "aco-04",
+    name: "Aros de Cebolla",
+    category: "Acompañamientos",
+    desc: "Aros de cebolla rebozados y crocantes.",
+    price: 18000,
+    img: "Img/Menu/aros-cebolla.jpg"
+  },
+  {
+    id: "aco-05",
+    name: "Nuggets (6u)",
+    category: "Acompañamientos",
+    desc: "6 unidades de nuggets.",
+    price: 22000,
+    img: "Img/Menu/nuggets-6.jpg"
+  },
+  {
+    id: "aco-06",
+    name: "Salsas Extra",
+    category: "Acompañamientos",
+    desc: "Cheddar / Barbacoa / Tasty / Mayo / Ketchup (elegí una).",
+    price: 5000,
+    img: "Img/Menu/salsas.jpg"
+  },
+
+  // =======================
+  // BEBIDAS (genérico)
+  // =======================
+  {
+    id: "beb-01",
+    name: "Gaseosa 250 ml",
+    category: "Bebidas",
+    desc: "Coca / Pepsi / Sprite / Fanta (según disponibilidad).",
+    price: 8000,
+    img: "Img/Menu/gaseosa-250.jpg"
+  },
+  {
+    id: "beb-02",
+    name: "Gaseosa 500 ml",
+    category: "Bebidas",
+    desc: "Coca / Pepsi / Sprite / Fanta (según disponibilidad).",
+    price: 12000,
+    img: "Img/Menu/gaseosa-500.jpg"
+  },
+  {
+    id: "beb-03",
+    name: "Agua Mineral",
+    category: "Bebidas",
+    desc: "Agua sin gas / con gas (según disponibilidad).",
+    price: 7000,
+    img: "Img/Menu/agua.jpg"
+  },
+  {
+    id: "beb-04",
+    name: "Jugo",
+    category: "Bebidas",
+    desc: "Jugo en caja (según disponibilidad).",
+    price: 9000,
+    img: "Img/Menu/jugo.jpg"
+  },
+  {
+    id: "beb-05",
+    name: "Limonada",
+    category: "Bebidas",
+    desc: "Limonada fresca (si aplica).",
+    price: 12000,
+    img: "Img/Menu/limonada.jpg"
+  }
+];

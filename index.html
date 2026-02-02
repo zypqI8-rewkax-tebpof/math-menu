@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>La Math Burger — Menú Digital</title>
+  <meta name="description" content="La Math Burger — Menú digital. Delivery por PedidosYa y ubicación en Google Maps." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;800&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header" aria-label="Encabezado principal">
+    <div class="container header__inner">
+      <a class="brand" href="#menu" aria-label="Ir al menú">
+        <img class="brand__logo" src="logo.png" alt="La Math Burger" />
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <!-- Botón Hamburguesa (mobile) -->
+        <button class="nav__toggle" type="button"
+          aria-label="Abrir menú"
+          aria-controls="navDrawer"
+          aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <!-- Links Desktop -->
+        <ul class="nav__desktop" aria-label="Navegación desktop">
+          <li><a href="#menu">Menú</a></li>
+          <li><a href="#promos">Promos</a></li>
+          <li><a href="#ubicacion">Ubicación</a></li>
+          <li><a href="#medios">Medios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li>
+            <a class="nav__cta" target="_blank" rel="noopener"
+              href="https://www.pedidosya.com.py/restaurantes/asuncion/la-math-burger-6a16a68d-0ffa-40f1-9aeb-133d5d4a15d4-menu">
+              <i class="bi bi-bag-fill"></i> Delivery
+            </a>
+          </li>
+        </ul>
+
+        <!-- Drawer Mobile -->
+        <aside id="navDrawer" class="drawer" aria-hidden="true">
+          <div class="drawer__head">
+            <div class="drawer__title">
+              <i class="bi bi-list"></i> Menú
+            </div>
+            <button class="drawer__close" type="button" aria-label="Cerrar menú">×</button>
+          </div>
+
+          <a class="drawer__link" href="#menu">
+            <i class="bi bi-grid-1x2-fill"></i> Menú
+          </a>
+          <a class="drawer__link" href="#promos">
+            <i class="bi bi-tags-fill"></i> Promos
+          </a>
+          <a class="drawer__link" href="#ubicacion">
+            <i class="bi bi-geo-alt-fill"></i> Ubicación
+          </a>
+          <a class="drawer__link" href="#medios">
+            <i class="bi bi-credit-card-fill"></i> Medios de pago & Apps
+          </a>
+          <a class="drawer__link" href="#contacto">
+            <i class="bi bi-chat-left-dots-fill"></i> Contacto
+          </a>
+
+          <a class="drawer__cta" target="_blank" rel="noopener"
+            href="https://www.pedidosya.com.py/restaurantes/asuncion/la-math-burger-6a16a68d-0ffa-40f1-9aeb-133d5d4a15d4-menu">
+            <i class="bi bi-bag-fill"></i> Delivery (PedidosYa)
+          </a>
+        </aside>
+
+        <!-- Overlay Mobile -->
+        <div id="drawerBackdrop" class="backdrop" aria-hidden="true"></div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" role="banner">
+    <div class="container hero__inner">
+      <div class="hero__content">
+
+        <!-- ✅ TITULO PARTIDO EN 2 LINEAS -->
+        <h1 class="hero__title">
+          <span class="hero__titleTop">La Math</span>
+          <span class="hero__titleBottom">Burger</span>
+        </h1>
+
+        <p class="hero__subtitle">Menú digital · Smash burgers · Asunción</p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#menu">
+            <i class="bi bi-menu-button-wide-fill"></i> Ver menú
+          </a>
+          <a class="btn btn--ghost" target="_blank" rel="noopener"
+            href="https://www.pedidosya.com.py/restaurantes/asuncion/la-math-burger-6a16a68d-0ffa-40f1-9aeb-133d5d4a15d4-menu">
+            <i class="bi bi-bag-fill"></i> Delivery
+          </a>
+          <a class="btn btn--ghost" target="_blank" rel="noopener"
+            href="https://www.instagram.com/lamathburger/?hl=en">
+            <i class="bi bi-instagram"></i> Instagram
+          </a>
+        </div>
+
+        <div class="hero__pills">
+          <span class="pill"><i class="bi bi-truck"></i> Delivery vía PedidosYa</span>
+          <span class="pill"><i class="bi bi-geo"></i> Asunción · Gran Asunción</span>
+        </div>
+      </div>
+
+      <div class="hero__media">
+        <img src="hero.png" alt="La Math Burger" />
+      </div>
+    </div>
+  </section>
+
+  <!-- MENÚ -->
+  <main id="menu" class="menu-section" aria-labelledby="menuTitle">
+    <div class="container">
+      <div class="menu__header">
+        <h2 id="menuTitle" class="section-title">Menú</h2>
+
+        <div class="menu__controls">
+          <div class="chips" role="tablist" aria-label="Filtrar por categorías">
+
+            <button class="chip chip--active" data-filter="all" role="tab" aria-selected="true">
+              <i class="bi bi-stars"></i> Todo
+            </button>
+
+            <!-- ✅ Categorías como PedidosYa -->
+            <button class="chip" data-filter="Combos" role="tab">
+              <i class="bi bi-box2-heart-fill"></i> Combos
+            </button>
+
+            <button class="chip" data-filter="Especiales" role="tab">
+              <i class="bi bi-lightning-charge-fill"></i> Especiales
+            </button>
+
+            <button class="chip" data-filter="Clásicas" role="tab">
+              <i class="bi bi-award-fill"></i> Clásicas
+            </button>
+
+            <button class="chip" data-filter="Acompañamientos" role="tab">
+              <i class="bi bi-cup-hot-fill"></i> Acompañamientos
+            </button>
+
+            <button class="chip" data-filter="Bebidas" role="tab">
+              <i class="bi bi-cup-straw"></i> Bebidas
+            </button>
+
+          </div>
+
+          <div class="search" role="search">
+            <i class="bi bi-search" aria-hidden="true"></i>
+            <input id="searchInput" type="search" placeholder="Buscar en el menú..." aria-label="Buscar en el menú" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Render dinámico desde app.js -->
+      <div id="menuGrid" class="grid" aria-live="polite"></div>
+
+      <div class="menu__footer">
+        <a class="btn btn--primary" target="_blank" rel="noopener"
+          href="https://www.pedidosya.com.py/restaurantes/asuncion/la-math-burger-6a16a68d-0ffa-40f1-9aeb-133d5d4a15d4-menu">
+          <i class="bi bi-bag-fill"></i> Pedir Delivery (PedidosYa)
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- PROMOS -->
+  <section id="promos" class="promos-section">
+    <div class="container">
+      <h2 class="section-title">Promos</h2>
+      <div class="grid">
+        <article class="promo-card">
+          <div class="promo-card__content">
+            <h3>Promo del Día</h3>
+            <p class="muted">Actualizá esta sección con tus promos reales.</p>
+            <div class="promo-card__price">Consultar</div>
+          </div>
+        </article>
+
+        <article class="promo-card">
+          <div class="promo-card__content">
+            <h3>Combo</h3>
+            <p class="muted">Burger + Papas + Bebida</p>
+            <div class="promo-card__price">Consultar</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <section id="ubicacion" class="location-section">
+    <div class="container">
+      <h2 class="section-title">Ubicación</h2>
+
+      <div class="location">
+        <div class="location__map">
+          <iframe
+            title="Mapa - La Math Burger"
+            src="https://www.google.com/maps?q=-25.3089555,-57.578938&z=17&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="location__card">
+          <h3 class="location__title"><i class="bi bi-geo-alt-fill"></i> La Math Burger</h3>
+          <p class="muted">Encontranos acá. Podés abrir el mapa o pedir delivery por PedidosYa.</p>
+
+          <div class="location__actions">
+            <a class="btn btn--primary"
+              href="https://www.google.com/maps/place/La+Math+Burger/@-25.3089555,-57.578938,517m/data=!3m2!1e3!4b1!4m6!3m5!1s0x945da986b82d2e15:0x6e89466eea519c51!8m2!3d-25.3089555!4d-57.578938!16s%2Fg%2F11sk635zb_?entry=ttu"
+              target="_blank" rel="noopener">
+              <i class="bi bi-map"></i> Abrir Google Maps
+            </a>
+
+            <a class="btn btn--ghost"
+              href="https://www.pedidosya.com.py/restaurantes/asuncion/la-math-burger-6a16a68d-0ffa-40f1-9aeb-133d5d4a15d4-menu"
+              target="_blank" rel="noopener">
+              <i class="bi bi-bag-fill"></i> PedidosYa
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MEDIOS -->
+  <section id="medios" class="logos-section">
+    <div class="container">
+      <h2 class="section-title">Medios de pago & Apps</h2>
+      <p class="muted">Colocá tus logos en la carpeta <strong>Img/</strong> para que se vean acá.</p>
+
+      <h3 class="logos-title"><i class="bi bi-credit-card-2-front"></i> Pagos</h3>
+      <div class="logos-grid">
+        <div class="logo-item"><img src="QR.png" alt="QR" /></div>
+        <div class="logo-item"><img src="Bancard check.png" alt="Bancard" /></div>
+        <div class="logo-item"><img src="Visa.png" alt="Visa" /></div>
+        <div class="logo-item"><img src="Mastercard.png" alt="Mastercard" /></div>
+      </div>
+<!--
+      <h3 class="logos-title"><i class="bi bi-bank"></i> Bancos / Billeteras</h3>
+      <div class="logos-grid">
+        <div class="logo-item"><img src="Img/Bancos/itau.png" alt="Itaú" /></div>
+        <div class="logo-item"><img src="Img/Bancos/continental.png" alt="Continental" /></div>
+        <div class="logo-item"><img src="Img/Bancos/ueno.png" alt="Ueno" /></div>
+        <div class="logo-item"><img src="Img/Bancos/vision.png" alt="Visión" /></div>
+        <div class="logo-item"><img src="Img/Bancos/familiar.png" alt="Familiar" /></div>
+        <div class="logo-item"><img src="Img/Bancos/gnb.png" alt="GNB" /></div>
+      </div>
+-->
+      <h3 class="logos-title"><i class="bi bi-phone"></i> Apps</h3>
+      <div class="logos-grid">
+        <a class="logo-item logo-item--link" target="_blank" rel="noopener"
+          href="https://www.pedidosya.com.py/restaurantes/asuncion/la-math-burger-6a16a68d-0ffa-40f1-9aeb-133d5d4a15d4-menu">
+          <img src="Pedidosya.png" alt="PedidosYa" />
+        </a>
+        <a class="logo-item logo-item--link" target="_blank" rel="noopener"
+          href="https://www.instagram.com/lamathburger/?hl=en">
+          <img src="logotipo-de-instagram.png" alt="Instagram" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contact-section">
+    <div class="container">
+      <h2 class="section-title">Contacto</h2>
+
+      <div class="contact">
+        <div class="contact__block">
+          <h3><i class="bi bi-instagram"></i> Instagram</h3>
+          <p>
+            <a class="link" target="_blank" rel="noopener" href="https://www.instagram.com/lamathburger/?hl=en">
+              @lamathburger
+            </a>
+          </p>
+        </div>
+
+        <div class="contact__block">
+          <h3><i class="bi bi-bag-fill"></i> Delivery</h3>
+          <p>
+            <a class="link" target="_blank" rel="noopener"
+              href="https://www.pedidosya.com.py/restaurantes/asuncion/la-math-burger-6a16a68d-0ffa-40f1-9aeb-133d5d4a15d4-menu">
+              Abrir PedidosYa
+            </a>
+          </p>
+        </div>
+
+        <div class="contact__block">
+          <h3><i class="bi bi-geo-alt"></i> Ubicación</h3>
+          <p>
+            <a class="link" target="_blank" rel="noopener"
+              href="https://www.google.com/maps/place/La+Math+Burger/@-25.3089555,-57.578938,517m/data=!3m2!1e3!4b1!4m6!3m5!1s0x945da986b82d2e15:0x6e89466eea519c51!8m2!3d-25.3089555!4d-57.578938!16s%2Fg%2F11sk635zb_?entry=ttu">
+              Abrir en Google Maps
+            </a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> La Math Burger — Menú digital.</p>
+      <p class="muted">creado por Focus Advisers Sistems©</p>
+    </div>
+  </footer>
+
+  <!-- Sticky CTA (mobile) -->
+  <a class="sticky-cta" target="_blank" rel="noopener"
+    href="https://www.pedidosya.com.py/restaurantes/asuncion/la-math-burger-6a16a68d-0ffa-40f1-9aeb-133d5d4a15d4-menu"
+    aria-label="Abrir Delivery en PedidosYa">
+    <i class="bi bi-bag-fill"></i> <strong>Delivery</strong>
+  </a>
+
+  <!-- JS -->
+  <script src="app.js" defer></script>
+  <script src="menu.json"></script>
+</body>
+</html>
